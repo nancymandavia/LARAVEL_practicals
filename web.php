@@ -1,7 +1,18 @@
 <?php
 
-use Illuminate\\Support\\Facades\\Route;
+use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'pages.home')->name('home');
-Route::view('/about', 'pages.about')->name('about');
-Route::view('/contact', 'pages.contact')->name('contact');
+// Home page route
+Route::get('/', function () {
+    return view('home');
+})->name('home');
+
+// About page route
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+// Contact page route
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');

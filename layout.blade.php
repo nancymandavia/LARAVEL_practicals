@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Laravel Routes Demo')</title>
+    <title>@yield('title', 'My Laravel Website')</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 850px; margin: 40px auto; padding: 0 18px; line-height: 1.6; color: #222; }
-        nav { display: flex; flex-wrap: wrap; gap: 16px; padding: 12px 0; border-bottom: 1px solid #ddd; }
-        a { color: #1769aa; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .card { background: #f5f7fa; border: 1px solid #e0e5eb; border-radius: 10px; padding: 18px; margin-top: 18px; }
-        code { background: #eee; padding: 2px 5px; border-radius: 4px; }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #f5f7fb; color: #263238; }
+        header { background: #253b65; color: white; padding: 22px 7%; }
+        .brand { font-size: 22px; font-weight: bold; margin: 0; }
+        nav { display: flex; gap: 24px; margin-top: 14px; flex-wrap: wrap; }
+        nav a { color: #fff; text-decoration: none; font-size: 15px; }
+        nav a:hover { color: #b8d7ff; }
+        main { width: min(850px, 90%); margin: 45px auto; background: white; padding: 38px; border-radius: 12px; box-shadow: 0 5px 22px #14213d12; min-height: 280px; }
+        h1 { color: #253b65; margin-top: 0; }
+        p { line-height: 1.8; color: #596579; }
+        .welcome { background: #edf3ff; border-left: 4px solid #4569aa; padding: 18px; border-radius: 5px; }
+        footer { text-align: center; padding: 20px; color: #778195; font-size: 13px; }
+        .button { display: inline-block; background: #253b65; color: white; text-decoration: none; padding: 11px 17px; border-radius: 5px; margin-top: 10px; }
     </style>
 </head>
 <body>
-    <h1>Laravel Routes & Wildcards Demo</h1>
-    <nav>
-        <a href="{{ route('home') }}">Home</a>
-        <a href="{{ route('about') }}">About</a>
-        <a href="{{ route('contact') }}">Contact</a>
-        <a href="{{ route('hello', ['name' => 'Nancy']) }}">Hello Nancy</a>
-        <a href="{{ route('student', ['name' => 'Nancy', 'course' => 'BCA']) }}">Student Example</a>
-        <a href="{{ route('category') }}">Default Category</a>
-        <a href="{{ route('product', ['id' => 1]) }}">Product Example</a>
-    </nav>
+    <header>
+        <p class="brand">My Laravel Website</p>
+        <nav>
+            <a href="{{ route('home') }}">Home</a>
+            <a href="{{ route('about') }}">About</a>
+            <a href="{{ route('contact') }}">Contact</a>
+        </nav>
+    </header>
+
     <main>
         @yield('content')
     </main>
+
+    <footer>© {{ date('Y') }} My Laravel Website</footer>
 </body>
 </html>
